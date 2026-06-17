@@ -192,4 +192,4 @@ def analyze(text: str):
 if __name__ == "__main__":
     demo = "The engine is incredibly powerful and acceleration is quick, but the fuel economy is terrible and the price is way too high. Seats are comfortable though."
     for item in analyze(demo):
-        print(item["aspects"], "->", item["clause"])
+        print(item["aspects"], "|", item["clause"])
