@@ -1,0 +1,16 @@
+name: keep-alive
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the Space
+        run: |
+          URL="https://HanfuZhao781-car-review-sentiment.hf.space/health"
+          code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 60 "$URL" || echo "000")
+          echo "Health check returned $code"

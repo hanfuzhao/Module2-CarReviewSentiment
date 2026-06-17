@@ -1,0 +1,22 @@
+{
+  "dataset_id": "florentgbelidji/car-reviews",
+  "source": "Edmunds consumer car reviews, Hugging Face mirror",
+  "labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "label_rule": "rating 1 to 2 is negative, 3 is neutral, 4 to 5 is positive",
+  "n_total": 36518,
+  "class_counts": {
+    "negative": 2238,
+    "neutral": 2863,
+    "positive": 31417
+  },
+  "splits": {
+    "train": 29214,
+    "val": 3652,
+    "test": 3652
+  },
+  "seed": 42
+}

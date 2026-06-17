@@ -1,0 +1,18 @@
+{
+  "n_total": 36518,
+  "class_counts": {
+    "negative": 2238,
+    "neutral": 2863,
+    "positive": 31417
+  },
+  "class_fractions": {
+    "negative": 0.0613,
+    "neutral": 0.0784,
+    "positive": 0.8603
+  },
+  "imbalance_ratio_max_over_min": 14.0,
+  "words_mean": 94.7,
+  "words_median": 88,
+  "words_p95": 204,
+  "majority_class_accuracy": 0.8603
+}
