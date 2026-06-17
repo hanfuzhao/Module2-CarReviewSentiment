@@ -1,6 +1,6 @@
 ENV := KMP_DUPLICATE_LIB_OK=TRUE TOKENIZERS_PARALLELISM=false TRANSFORMERS_VERBOSITY=error
 
-.PHONY: install data eda train fast app slides clean
+.PHONY: install data eda train fast app clean
 
 install:
 	pip install -r requirements.txt
@@ -19,9 +19,6 @@ fast:
 
 app:
 	$(ENV) python main.py
-
-slides:
-	$(ENV) python -m scripts.make_slides
 
 clean:
 	rm -rf __pycache__ scripts/__pycache__ data/processed/* data/outputs/plots/* models/_smoke

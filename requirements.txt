@@ -10,4 +10,3 @@ sentencepiece>=0.2
 accelerate>=0.34
 Flask>=3.0
 gunicorn>=21.2
-python-pptx>=1.0

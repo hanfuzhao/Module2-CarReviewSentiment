@@ -75,7 +75,6 @@ scripts/
   augment.py            EDA and back-translation augmentation
   model.py              NaiveBaseline, ClassicalModel, DeepModel
   experiment.py         metrics, negation and sarcasm stress tests, abstention
-  make_slides.py        builds PITCH.pptx from metrics.json and plots
 templates/  static/     web UI
 data/
   raw/edmunds/          metadata.json and committed sample.csv
