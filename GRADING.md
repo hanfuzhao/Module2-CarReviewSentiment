@@ -6,10 +6,12 @@ A quick map from the hackathon requirements to this repo, for fast evaluation.
 
 | Pitch requirement | Where |
 |---|---|
-| Problem statement | [PITCH.md](PITCH.md) Problem section, [README](README.md) intro |
+| Problem statement | [README](README.md) intro |
 | Pre-trained model and transfer learning | DistilBERT fine-tuned in `scripts/model.py::DeepModel.fit` |
 | Data augmentation techniques | `scripts/augment.py`, EDA and back-translation, applied in `setup.py` |
-| Preliminary results | [PITCH.md](PITCH.md) Results section, `data/outputs/metrics.json`, [TECHNICAL_REPORT.md](TECHNICAL_REPORT.md) |
+| Preliminary results | [README](README.md) Results, `data/outputs/metrics.json` |
+
+The pitch itself is delivered separately as the recorded presentation, not stored in this repository.
 
 ## 2. Code and deployment
 
