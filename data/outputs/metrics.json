@@ -1,0 +1,588 @@
+{
+  "config": {
+    "fast": false,
+    "deploy_epochs": 2,
+    "lowres_epochs": 3,
+    "deploy_cap": 9000,
+    "lowres_cap": 1200,
+    "aug_per_class": 800,
+    "train_size": 29214,
+    "test_size": 3652
+  },
+  "models": {
+    "naive": {
+      "accuracy": 0.8604,
+      "macro_f1": 0.3083,
+      "per_class": {
+        "negative": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "neutral": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "positive": {
+          "precision": 0.8604,
+          "recall": 1.0,
+          "f1": 0.9249
+        }
+      },
+      "negative_recall": 0.0,
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          224
+        ],
+        [
+          0,
+          0,
+          286
+        ],
+        [
+          0,
+          0,
+          3142
+        ]
+      ]
+    },
+    "classical": {
+      "accuracy": 0.8535,
+      "macro_f1": 0.572,
+      "per_class": {
+        "negative": {
+          "precision": 0.4257,
+          "recall": 0.3839,
+          "f1": 0.4038
+        },
+        "neutral": {
+          "precision": 0.3149,
+          "recall": 0.458,
+          "f1": 0.3732
+        },
+        "positive": {
+          "precision": 0.9558,
+          "recall": 0.923,
+          "f1": 0.9391
+        }
+      },
+      "negative_recall": 0.3839,
+      "confusion_matrix": [
+        [
+          86,
+          106,
+          32
+        ],
+        [
+          53,
+          131,
+          102
+        ],
+        [
+          63,
+          179,
+          2900
+        ]
+      ]
+    },
+    "deep": {
+      "accuracy": 0.8666,
+      "macro_f1": 0.5664,
+      "per_class": {
+        "negative": {
+          "precision": 0.4535,
+          "recall": 0.3482,
+          "f1": 0.3939
+        },
+        "neutral": {
+          "precision": 0.3545,
+          "recall": 0.3706,
+          "f1": 0.3624
+        },
+        "positive": {
+          "precision": 0.9371,
+          "recall": 0.9488,
+          "f1": 0.9429
+        }
+      },
+      "negative_recall": 0.3482,
+      "confusion_matrix": [
+        [
+          78,
+          72,
+          74
+        ],
+        [
+          54,
+          106,
+          126
+        ],
+        [
+          40,
+          121,
+          2981
+        ]
+      ],
+      "train_class_counts": {
+        "negative": 551,
+        "neutral": 706,
+        "positive": 7743
+      }
+    }
+  },
+  "augmentation_study": {
+    "regime": "low-resource: 1200 reviews (cold-start, like a newly-launched car)",
+    "train_class_counts": {
+      "base": {
+        "negative": 74,
+        "neutral": 94,
+        "positive": 1032
+      },
+      "aug": {
+        "negative": 800,
+        "neutral": 800,
+        "positive": 1032
+      }
+    },
+    "classical": {
+      "base": {
+        "accuracy": 0.8612,
+        "macro_f1": 0.319,
+        "per_class": {
+          "negative": {
+            "precision": 1.0,
+            "recall": 0.0089,
+            "f1": 0.0177
+          },
+          "neutral": {
+            "precision": 0.5,
+            "recall": 0.007,
+            "f1": 0.0138
+          },
+          "positive": {
+            "precision": 0.8615,
+            "recall": 0.9997,
+            "f1": 0.9255
+          }
+        },
+        "negative_recall": 0.0089,
+        "confusion_matrix": [
+          [
+            2,
+            1,
+            221
+          ],
+          [
+            0,
+            2,
+            284
+          ],
+          [
+            0,
+            1,
+            3141
+          ]
+        ]
+      },
+      "aug": {
+        "accuracy": 0.8568,
+        "macro_f1": 0.4022,
+        "per_class": {
+          "negative": {
+            "precision": 0.375,
+            "recall": 0.1071,
+            "f1": 0.1667
+          },
+          "neutral": {
+            "precision": 0.3125,
+            "recall": 0.0699,
+            "f1": 0.1143
+          },
+          "positive": {
+            "precision": 0.8754,
+            "recall": 0.9819,
+            "f1": 0.9256
+          }
+        },
+        "negative_recall": 0.1071,
+        "confusion_matrix": [
+          [
+            24,
+            13,
+            187
+          ],
+          [
+            14,
+            20,
+            252
+          ],
+          [
+            26,
+            31,
+            3085
+          ]
+        ]
+      }
+    },
+    "deep": {
+      "base": {
+        "accuracy": 0.8604,
+        "macro_f1": 0.5111,
+        "per_class": {
+          "negative": {
+            "precision": 0.3701,
+            "recall": 0.2545,
+            "f1": 0.3016
+          },
+          "neutral": {
+            "precision": 0.341,
+            "recall": 0.2587,
+            "f1": 0.2942
+          },
+          "positive": {
+            "precision": 0.9177,
+            "recall": 0.9583,
+            "f1": 0.9376
+          }
+        },
+        "negative_recall": 0.2545,
+        "confusion_matrix": [
+          [
+            57,
+            61,
+            106
+          ],
+          [
+            48,
+            74,
+            164
+          ],
+          [
+            49,
+            82,
+            3011
+          ]
+        ]
+      },
+      "aug": {
+        "accuracy": 0.8513,
+        "macro_f1": 0.4631,
+        "per_class": {
+          "negative": {
+            "precision": 0.3858,
+            "recall": 0.2188,
+            "f1": 0.2792
+          },
+          "neutral": {
+            "precision": 0.2649,
+            "recall": 0.1399,
+            "f1": 0.1831
+          },
+          "positive": {
+            "precision": 0.8951,
+            "recall": 0.9612,
+            "f1": 0.9269
+          }
+        },
+        "negative_recall": 0.2188,
+        "confusion_matrix": [
+          [
+            49,
+            32,
+            143
+          ],
+          [
+            35,
+            40,
+            211
+          ],
+          [
+            43,
+            79,
+            3020
+          ]
+        ]
+      }
+    }
+  },
+  "augmentation_effect": {
+    "macro_f1": {
+      "before": 0.319,
+      "after": 0.4022,
+      "delta": 0.0832
+    },
+    "negative_recall": {
+      "before": 0.0089,
+      "after": 0.1071,
+      "delta": 0.0982
+    },
+    "neutral_recall": {
+      "before": 0.007,
+      "after": 0.0699,
+      "delta": 0.0629
+    }
+  },
+  "augmentation_effect_deep": {
+    "macro_f1": {
+      "before": 0.5111,
+      "after": 0.4631,
+      "delta": -0.048
+    },
+    "negative_recall": {
+      "before": 0.2545,
+      "after": 0.2188,
+      "delta": -0.0357
+    },
+    "neutral_recall": {
+      "before": 0.2587,
+      "after": 0.1399,
+      "delta": -0.1188
+    }
+  },
+  "stress_tests": {
+    "negation": {
+      "deep": {
+        "overall_accuracy": 0.4583,
+        "affirmative_accuracy": 0.7,
+        "negated_accuracy": 0.0,
+        "litotes_accuracy": 1.0,
+        "affirmative_minus_negated_gap": 0.7,
+        "examples": [
+          {
+            "text": "The brakes are excellent and very responsive.",
+            "gold": "positive",
+            "pred": "positive"
+          },
+          {
+            "text": "This engine is powerful and smooth.",
+            "gold": "positive",
+            "pred": "positive"
+          },
+          {
+            "text": "The fuel economy is great for the class.",
+            "gold": "positive",
+            "pred": "positive"
+          },
+          {
+            "text": "The interior is comfortable and quiet.",
+            "gold": "positive",
+            "pred": "positive"
+          },
+          {
+            "text": "It has been reliable for years.",
+            "gold": "positive",
+            "pred": "positive"
+          },
+          {
+            "text": "The handling is precise and confident.",
+            "gold": "positive",
+            "pred": "positive"
+          },
+          {
+            "text": "The brakes are terrible and unsafe.",
+            "gold": "negative",
+            "pred": "negative"
+          },
+          {
+            "text": "The engine is weak and noisy.",
+            "gold": "negative",
+            "pred": "neutral"
+          },
+          {
+            "text": "The ride is uncomfortable and harsh.",
+            "gold": "negative",
+            "pred": "neutral"
+          },
+          {
+            "text": "It has been unreliable since day one.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "The brakes are not good at all.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "This engine is not powerful or smooth.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "The fuel economy is not great for the class.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "The interior is not comfortable and never quiet.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "It has not been reliable at all.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "The handling is not precise or confident.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "I would not call this car reliable.",
+            "gold": "negative",
+            "pred": "neutral"
+          },
+          {
+            "text": "I can't say the seats are comfortable.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "Don't expect good fuel economy from this.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "There is no way this is worth the price.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "The brakes are not bad at all.",
+            "gold": "positive",
+            "pred": "positive"
+          },
+          {
+            "text": "The ride is not uncomfortable.",
+            "gold": "positive",
+            "pred": "positive"
+          },
+          {
+            "text": "It is not an unreliable car.",
+            "gold": "positive",
+            "pred": "positive"
+          },
+          {
+            "text": "You won't be disappointed by the engine.",
+            "gold": "positive",
+            "pred": "positive"
+          }
+        ]
+      }
+    },
+    "sarcasm": {
+      "deep": {
+        "accuracy": 0.0,
+        "misread_as_positive_rate": 1.0,
+        "examples": [
+          {
+            "text": "Great, another trip to the dealer this week.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "I just love spending every weekend fixing this thing.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "Sure, it's reliable, if you enjoy walking home.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "Wonderful, the AC broke again in the first month.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "Oh fantastic, another warning light on the dash.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "What a steal, it only cost me two tow trucks.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "Brilliant engineering, the door handle fell off.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "Yeah, the fuel economy is amazing if you never drive it.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "Best part of owning this car is the time at the mechanic.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "Such a smooth ride, my coffee ends up on the ceiling.",
+            "gold": "negative",
+            "pred": "positive"
+          },
+          {
+            "text": "It's fine, I guess, nothing special.",
+            "gold": "neutral",
+            "pred": "positive"
+          },
+          {
+            "text": "Not the worst car I have owned.",
+            "gold": "neutral",
+            "pred": "positive"
+          },
+          {
+            "text": "It does the job, more or less.",
+            "gold": "neutral",
+            "pred": "positive"
+          },
+          {
+            "text": "Decent enough for the price, but that's about it.",
+            "gold": "neutral",
+            "pred": "positive"
+          }
+        ]
+      }
+    }
+  },
+  "confidence_gating": [
+    {
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "accuracy": 0.8666
+    },
+    {
+      "threshold": 0.5,
+      "coverage": 0.8814,
+      "accuracy": 0.9338
+    },
+    {
+      "threshold": 0.6,
+      "coverage": 0.8434,
+      "accuracy": 0.9523
+    },
+    {
+      "threshold": 0.7,
+      "coverage": 0.8269,
+      "accuracy": 0.9586
+    },
+    {
+      "threshold": 0.8,
+      "coverage": 0.8045,
+      "accuracy": 0.967
+    },
+    {
+      "threshold": 0.9,
+      "coverage": 0.7749,
+      "accuracy": 0.9767
+    }
+  ]
+}
