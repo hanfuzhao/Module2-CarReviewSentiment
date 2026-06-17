@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Review Sentiment Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Car Review Sentiment Analyzer</h1>
+    <p class="tagline">Per-aspect sentiment for owner reviews, with evaluation at the core.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <label for="review">Owner review</label>
+      <textarea id="review" rows="5" placeholder="Paste a car review, e.g. 'The engine is powerful but the fuel economy is terrible and the price is way too high.'"></textarea>
+
+      <div class="controls">
+        <div class="model-pick">
+          <label for="model">Model</label>
+          <select id="model">
+            <option value="deep">Deep: fine-tuned DistilBERT (deployed)</option>
+            <option value="classical">Classical: TF-IDF + logistic regression</option>
+            <option value="naive">Naive: majority class</option>
+          </select>
+          <span id="model-acc" class="acc-badge"></span>
+        </div>
+        <button id="analyze">Analyze</button>
+      </div>
+
+      <div class="examples">
+        <span class="ex-label">Try:</span>
+        <button class="ex" data-kind="mixed">Mixed review</button>
+        <button class="ex" data-kind="negation">Negation ("not good")</button>
+        <button class="ex" data-kind="litotes">Litotes ("not bad")</button>
+        <button class="ex" data-kind="sarcasm">Sarcasm</button>
+        <button class="ex" data-kind="positive">Glowing</button>
+      </div>
+      <p class="hint">The negation and sarcasm examples are where models break. Switch between models to see it.</p>
+    </section>
+
+    <section id="results" class="panel hidden">
+      <div id="feedback" class="feedback"></div>
+
+      <div class="overall">
+        <h2>Overall sentiment</h2>
+        <div class="verdict">
+          <span id="overall-label" class="badge"></span>
+          <div class="confbar"><div id="overall-bar" class="confbar-fill"></div></div>
+          <span id="overall-conf" class="conf-text"></span>
+        </div>
+        <div id="overall-probs" class="probs"></div>
+      </div>
+
+      <div class="aspects">
+        <h2>Breakdown by aspect</h2>
+        <div id="aspect-list"></div>
+        <p id="no-aspects" class="hint hidden">No specific car aspects detected in this review.</p>
+      </div>
+    </section>
+
+    <section id="error" class="panel error hidden"></section>
+  </main>
+
+  <footer>
+    <p>3-class sentiment (negative / neutral / positive) on real Edmunds owner reviews.
+       Aspect routing is lexicon-based and fully inspectable. Built for the Module 2 hackathon.</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
